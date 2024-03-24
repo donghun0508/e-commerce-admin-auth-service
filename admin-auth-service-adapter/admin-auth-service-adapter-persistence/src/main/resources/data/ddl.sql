@@ -9,6 +9,26 @@ DROP TABLE if exists MEMBER;
 DROP TABLE if exists GROUPS;
 DROP TABLE if exists PERMISSION;
 
+-- CREATE TABLE GROUP_CODE
+-- (
+--     group_code  VARCHAR(255)            NOT NULL primary key,
+--     description VARCHAR(255),
+--     is_deleted  BOOLEAN   DEFAULT FALSE NOT NULL,
+--     created_at  timestamp default now() not null,
+--     modified_at timestamp default now() not null
+-- );
+--
+-- CREATE TABLE CODE
+-- (
+--     code        BIGINT                  NOT NULL primary key,
+--     group_code  VARCHAR(255)            NOT NULL,
+--     description VARCHAR(255),
+--     is_deleted  BOOLEAN   DEFAULT FALSE NOT NULL,
+--     created_at  timestamp default now() not null,
+--     modified_at timestamp default now() not null,
+--     FOREIGN KEY (group_code) REFERENCES GROUP_CODE (group_code)
+-- );
+
 CREATE TABLE MEMBER
 (
     member_id   BIGINT                  NOT NULL AUTO_INCREMENT primary key,

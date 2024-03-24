@@ -1,5 +1,6 @@
 package com.example.admin.auth.service.application.config;
 
+import com.example.admin.auth.service.domain.factory.AdminAccountDomainFactory;
 import com.example.admin.auth.service.domain.factory.PermissionDomainFactory;
 import com.example.admin.auth.service.domain.factory.PoliciesDomainFactory;
 import org.springframework.context.annotation.Bean;
@@ -16,5 +17,10 @@ public class DomainFactoryConfig {
     @Bean
     PoliciesDomainFactory policiesDomainFactory() {
         return new PoliciesDomainFactory();
+    }
+
+    @Bean
+    AdminAccountDomainFactory adminAccountDomainFactory() {
+        return new AdminAccountDomainFactory();
     }
 }
