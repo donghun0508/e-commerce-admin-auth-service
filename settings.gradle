@@ -1,0 +1,10 @@
+rootProject.name = 'e-commerce-admin-auth-service'
+include 'admin-auth-service-adapter:admin-auth-service-adapter-persistence'
+include 'admin-auth-service-adapter:admin-auth-service-adapter-web'
+include 'admin-auth-service-infrastructure:admin-auth-service-infrastructure-encrypt'
+include 'admin-auth-service-application'
+include 'admin-auth-service-domain'
+include 'admin-auth-service-common'
+include 'admin-auth-service-container'
+
+

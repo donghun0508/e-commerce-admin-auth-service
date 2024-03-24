@@ -1,0 +1,19 @@
+project(':admin-auth-service-container') {
+    bootJar {
+        enabled = true
+        archiveFileName = 'admin-auth-service-container.jar'
+    }
+
+    dependencies {
+        implementation 'org.springframework.boot:spring-boot-starter'
+
+
+        implementation project(':admin-auth-service-adapter:admin-auth-service-adapter-persistence')
+        implementation project(':admin-auth-service-adapter:admin-auth-service-adapter-web')
+        implementation project(':admin-auth-service-infrastructure:admin-auth-service-infrastructure-encrypt')
+        implementation project(':admin-auth-service-application')
+        implementation project(':admin-auth-service-common')
+        implementation project(':admin-auth-service-domain')
+    }
+
+}

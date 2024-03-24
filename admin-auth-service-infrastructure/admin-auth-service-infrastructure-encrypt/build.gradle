@@ -1,0 +1,10 @@
+project(':admin-auth-service-infrastructure:admin-auth-service-infrastructure-encrypt') {
+
+    dependencies {
+        implementation 'org.springframework.boot:spring-boot-starter'
+        implementation 'org.springframework.security:spring-security-crypto'
+
+        implementation project(':admin-auth-service-application')
+        implementation project(':admin-auth-service-common')
+    }
+}

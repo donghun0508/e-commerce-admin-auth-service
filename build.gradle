@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.2.3'
+    id 'io.spring.dependency-management' version '1.1.4'
+}
+
+bootJar { enabled = false }
+jar { enabled = true }
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    group = 'com.example'
+    version = '0.0.1-SNAPSHOT'
+    sourceCompatibility = '17'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        compileOnly 'org.projectlombok:lombok'
+        annotationProcessor 'org.projectlombok:lombok'
+
+        testImplementation 'org.jeasy:easy-random-core:5.0.0'
+        implementation 'net.datafaker:datafaker:2.1.0'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    }
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
