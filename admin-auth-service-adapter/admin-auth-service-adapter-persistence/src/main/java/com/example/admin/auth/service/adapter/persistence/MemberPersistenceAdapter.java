@@ -18,11 +18,11 @@ public class MemberPersistenceAdapter implements MemberRepository {
 
     @Override
     public void save(Member member) {
-
+        memberJpaRepository.save(memberJpaMapper.toEntity(member));
     }
 
     @Override
     public Optional<Member> findByEmail(String email) {
-        return memberJpaRepository.findByEmail(email).map(memberJpaMapper::toDomain);
+        return memberJpaRepository.findByEmailFetchJoin(email).map(memberJpaMapper::toDomain);
     }
 }

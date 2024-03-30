@@ -1,9 +1,7 @@
 package com.example.admin.auth.service.adapter.persistence.domain.entity;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -26,6 +24,17 @@ public class MemberJpaEntity extends BaseTimeEntity {
     private boolean isDeleted;
     private LocalDateTime deletedAt;
 
-    @OneToMany(mappedBy = "member", fetch = FetchType.LAZY)
-    private List<GroupMemberJpaEntity> groupMembers = new ArrayList<>();
+    @OneToMany(mappedBy = "member", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @Setter private List<GroupMemberJpaEntity> groupMembers = new ArrayList<>();
+
+    @Builder
+    private MemberJpaEntity(Long id, String email, String password, String nickName, boolean isDeleted, LocalDateTime deletedAt, List<GroupMemberJpaEntity> groupMembers) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.nickName = nickName;
+        this.isDeleted = isDeleted;
+        this.deletedAt = deletedAt;
+        this.groupMembers = groupMembers;
+    }
 }

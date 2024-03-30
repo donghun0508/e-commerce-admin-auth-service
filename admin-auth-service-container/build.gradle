@@ -7,7 +7,6 @@ project(':admin-auth-service-container') {
     dependencies {
         implementation 'org.springframework.boot:spring-boot-starter'
 
-
         implementation project(':admin-auth-service-adapter:admin-auth-service-adapter-persistence')
         implementation project(':admin-auth-service-adapter:admin-auth-service-adapter-web')
         implementation project(':admin-auth-service-infrastructure:admin-auth-service-infrastructure-encrypt')

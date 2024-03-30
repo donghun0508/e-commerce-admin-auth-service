@@ -18,6 +18,6 @@ INSERT INTO conditions (code, description)
 VALUES ('IPADDRESS', '지정된 IP 주소 또는 범위')
      , ('NOT_IPADDRESS', '지정된 IP 주소 또는 범위를 제외한 모든 IP 주소');
 
-INSERT INTO policy_CONDITIONS (policy_id, condition_code_id, values)
+INSERT INTO policy_conditions (policy_id, condition_code_id, values)
 VALUES (1, 1, '{"IpAddress": {"SourceIp": "203.0.113.0/24"}}')
 ;

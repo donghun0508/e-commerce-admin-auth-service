@@ -12,7 +12,8 @@ public class Group extends BaseEntity<GroupId> {
     private String description;
 
     @Builder
-    private Group(String name, String description) {
+    private Group(GroupId groupId, String name, String description) {
+        super.setId(groupId);
         this.name = name;
         this.description = description;
     }

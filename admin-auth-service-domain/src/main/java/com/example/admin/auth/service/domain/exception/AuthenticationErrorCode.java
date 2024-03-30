@@ -17,6 +17,7 @@ public enum AuthenticationErrorCode {
     PERMISSION_NOT_FOUND(404, "PERMISSION_NOT_FOUND", "Permission not found"),
     ROLE_ALREADY_EXIST(409, "ROLE_ALREADY_EXIST", "Role already exist"),
     ROLE_NOT_FOUND(404, "ROLE_NOT_FOUND", "Role not found"),
+    PASSWORD_NOT_MATCH(400, "PASSWORD_NOT_MATCH", "Password not match"),
     ;
 
     private final Integer httpStatusCode;
