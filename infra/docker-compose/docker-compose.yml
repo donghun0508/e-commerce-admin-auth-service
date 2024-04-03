@@ -1,0 +1,36 @@
+version: "3.9"
+
+services:
+  e-commerce-auth-mysql:
+    container_name: ${AUTH_MYSQL_CONTAINER_NAME}
+    image: mysql:8.0.31
+    ports:
+      - ${MYSQL_BINDING_PORT}:${MYSQL_PORT}
+    volumes:
+      - ${MYSQL_CUSTOM_CONFIG_PATH}:/etc/mysql/conf.d
+      - ${MYSQL_DATA_PATH}:/docker-entrypoint-initdb.d
+    environment:
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - TZ=${TZ}
+    env_file:
+      - .env
+    networks:
+      - e-commerce-network
+
+  e-commerce-cache-redis:
+    container_name: ${REDIS_CONTAINER_NAME}
+    image: redis:latest
+    ports:
+      - ${REDIS_BINDING_PORT}:${REDIS_PORT}
+    hostname: ${REDIS_HOSTNAME}
+    env_file:
+      - .env
+    networks:
+      - e-commerce-network
+
+networks:
+  e-commerce-network:
+    driver: bridge
+    external: true
+    internal: true

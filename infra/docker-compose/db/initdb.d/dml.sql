@@ -1,3 +1,9 @@
+INSERT INTO `groups` (name, description)
+VALUES ('ADMIN_GROUP', '관리자 그룹')
+     , ('SELLER_GROUP', '판매자 그룹')
+     , ('CUSTOMER_GROUP', '구매자 그룹')
+;
+
 INSERT INTO permission (order_number, resource, action, resource_type, description)
 VALUES (1, '/admin-auth-service/api/v1/permissions/**', 'POST', 'URL', '권한 등록 권한')
      , (1, '/admin-auth-service/api/v1/permissions/**', 'GET', 'URL', '권한 조회 권한')
