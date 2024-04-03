@@ -1,5 +1,6 @@
 server:
   shutdown: graceful
+  port: 8200
 
 spring:
   data:
@@ -23,4 +24,4 @@ spring:
 
 logging:
   level:
-    com.example.auth.admin.service: debug
+    com.example.admin.auth.service: debug
